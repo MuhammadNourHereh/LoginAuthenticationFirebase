@@ -18,9 +18,19 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.nourtech.wordpress.loginauthenticationfirebase.ui.fragments.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_pop_including_nav_graph"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.nourtech.wordpress.loginauthenticationfirebase.ui.fragments.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
 </navigation>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +15,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="username"
+            android:hint="username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +29,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="nick name"
+            android:hint="nick name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_username_error_message" />
@@ -39,7 +38,7 @@
             android:id="@+id/btn_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="sign up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:visibility="gone"
+            android:textColor="@android:color/holo_red_dark"
             app:layout_constraintStart_toStartOf="@+id/et_username"
             app:layout_constraintTop_toBottomOf="@+id/et_username" />
 
@@ -60,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:visibility="gone"
+            android:textColor="@android:color/holo_red_dark"
             app:layout_constraintStart_toStartOf="@+id/et_nickname"
             app:layout_constraintTop_toBottomOf="@+id/et_nickname" />
 
@@ -72,6 +73,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPassword"
+            android:hint="password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.474"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +88,7 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPassword"
+            android:hint="retype password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_password_error_message" />
@@ -96,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:visibility="gone"
+            android:textColor="@android:color/holo_red_dark"
             app:layout_constraintStart_toStartOf="@+id/et_password"
             app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
@@ -105,6 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:visibility="gone"
+            android:textColor="@android:color/holo_red_dark"
             app:layout_constraintStart_toStartOf="@+id/et_retype_password"
             app:layout_constraintTop_toBottomOf="@+id/et_retype_password" />
 
