@@ -11,11 +11,12 @@ import com.nourtech.wordpress.loginauthenticationfirebase.databinding.FragmentPr
 class ProfileFragment: Fragment(R.layout.fragment_profile) {
 
     private lateinit var binding: FragmentProfileBinding
-    private val auth = FirebaseAuth.getInstance()
+    lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProfileBinding.bind(view)
+        auth = FirebaseAuth.getInstance()
 
         binding.btnLogout.setOnClickListener {
             auth.signOut()
@@ -24,7 +25,7 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
         val user = auth.currentUser
 
         if (user != null) {
-            binding.tvNickname.text = user.email
+            binding.tvNickname.text = user.email.split("@".toRegex(), 0)[0]
         }
 
 

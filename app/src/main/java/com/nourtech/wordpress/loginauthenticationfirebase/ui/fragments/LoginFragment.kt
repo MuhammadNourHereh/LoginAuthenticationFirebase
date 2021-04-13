@@ -18,11 +18,12 @@ import kotlinx.coroutines.launch
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
-    private val auth = FirebaseAuth.getInstance()
+    lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentLoginBinding.bind(view)
+        auth = FirebaseAuth.getInstance()
 
         binding.apply {
             tvSignUp.setOnClickListener {
@@ -47,7 +48,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     if (it.isSuccessful) {
                         findNavController().navigate(R.id.action_loginFragment_to_profileFragment)
                     } else {
-                        binding.tvPasswordErrorMessage.text = getString(R.string.login_failed)
+                        binding.tvPasswordErrorMessage.text = "login failed"
                         binding.tvPasswordErrorMessage.visibility = VISIBLE
                     }
                 }

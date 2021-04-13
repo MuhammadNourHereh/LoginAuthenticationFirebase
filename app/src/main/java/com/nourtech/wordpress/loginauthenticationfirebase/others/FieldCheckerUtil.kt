@@ -1,5 +1,6 @@
 package com.nourtech.wordpress.loginauthenticationfirebase.others
 
+
     const val PASSED = 0
     const val NOT_PASSED_EMPTY = 1
     const val NOT_PASSED_TOO_SHORT = 2

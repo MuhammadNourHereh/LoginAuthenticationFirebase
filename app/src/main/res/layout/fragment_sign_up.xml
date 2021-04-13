@@ -15,9 +15,10 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="username"
+            android:autofillHints=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/email"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
@@ -29,16 +30,17 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="nick name"
+            android:autofillHints=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/nick_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_username_error_message" />
 
         <Button
             android:id="@+id/btn_sign_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sign up"
+            android:text="@string/sign_up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,10 +75,11 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPassword"
-            android:hint="password"
+            android:autofillHints=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.474"
             app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/password"
             app:layout_constraintTop_toBottomOf="@+id/tv_nickname_error_message" />
 
         <EditText
@@ -88,9 +91,10 @@
             android:layout_marginEnd="16dp"
             android:ems="10"
             android:inputType="textPassword"
-            android:hint="retype password"
+            android:autofillHints=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:hint="@string/retype_password"
             app:layout_constraintTop_toBottomOf="@+id/tv_password_error_message" />
 
         <TextView

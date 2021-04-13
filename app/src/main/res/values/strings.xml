@@ -7,5 +7,7 @@
     <string name="too_long_password_error_message">user name should contain less then 20 characters</string>
     <string name="invalid_password_massage">password should contain: at least one letter and one number</string>
     <string name="email_is_invalid">email is invalid</string>
-    <string name="login_failed">login failed</string>
+    <string name="login">Login</string>
+    <string name="nick_name">nick name</string>
+    <string name="retype_password">retype password</string>
 </resources>

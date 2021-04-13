@@ -15,11 +15,12 @@ import kotlinx.coroutines.launch
 
 class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
     private lateinit var binding: FragmentSignUpBinding
-    private val auth = FirebaseAuth.getInstance()
+    lateinit var auth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSignUpBinding.bind(view)
+        auth = FirebaseAuth.getInstance()
 
         binding.btnSignUp.setOnClickListener {
             if (checkField())
@@ -54,7 +55,7 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
     private fun checkField(): Boolean {
         var passed = true
         val username = binding.etUsername.text.toString()
-        //val nickname = binding.etUsername.text.toString() todo
+        val nickname = binding.etUsername.text.toString()
         val password = binding.etPassword.text.toString()
         val retypePassword = binding.etRetypePassword.text.toString()
 
