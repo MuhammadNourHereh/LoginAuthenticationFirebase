@@ -4,7 +4,7 @@ import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
 
-class UtilitiesTest {
+class UtilTest {
 
     @Test
     fun `is field empty`() {

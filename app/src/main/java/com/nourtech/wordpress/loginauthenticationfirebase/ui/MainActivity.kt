@@ -7,19 +7,19 @@ import com.google.firebase.auth.FirebaseAuth
 import com.nourtech.wordpress.loginauthenticationfirebase.R
 
 class MainActivity : AppCompatActivity() {
-    lateinit var auth: FirebaseAuth
+    private val auth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        auth = FirebaseAuth.getInstance()
     }
     
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
+
+        // Check if user is logged in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             findNavController(R.id.nav_host_fragment).navigate(R.id.action_global_profileFragment)
         }
     }
