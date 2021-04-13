@@ -9,12 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.nourtech.wordpress.loginauthenticationfirebase.R
 import com.nourtech.wordpress.loginauthenticationfirebase.databinding.FragmentLoginBinding
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities.NOT_PASSED_EMPTY
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities.NOT_PASSED_INVALID
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities.NOT_PASSED_TOO_LONG
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities.NOT_PASSED_TOO_SHORT
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities.PASSED
+import com.nourtech.wordpress.loginauthenticationfirebase.others.*
+import com.nourtech.wordpress.loginauthenticationfirebase.others.NOT_PASSED_EMPTY
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -68,7 +64,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         val password = binding.etPassword.text.toString()
 
         binding.tvUsernameErrorMessage.apply {
-            when (Utilities.checkForUsername(username)) {
+            when (checkForUsername(username)) {
                 NOT_PASSED_EMPTY -> {
                     text = context.getString(R.string.empty_field_error_message)
                     visibility = VISIBLE
@@ -90,7 +86,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
         binding.tvPasswordErrorMessage.apply {
-            when (Utilities.checkPassword(password)) {
+            when (checkPassword(password)) {
                 NOT_PASSED_EMPTY -> {
                     text = context.getString(R.string.empty_field_error_message)
                     visibility = VISIBLE

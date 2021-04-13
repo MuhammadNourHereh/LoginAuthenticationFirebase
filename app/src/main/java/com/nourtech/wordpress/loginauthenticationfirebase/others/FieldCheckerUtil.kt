@@ -1,6 +1,5 @@
 package com.nourtech.wordpress.loginauthenticationfirebase.others
 
-object Utilities {
 
     const val PASSED = 0
     const val NOT_PASSED_EMPTY = 1
@@ -51,5 +50,3 @@ object Utilities {
             else -> PASSED
         }
     }
-
-}

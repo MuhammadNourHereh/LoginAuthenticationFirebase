@@ -8,7 +8,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.nourtech.wordpress.loginauthenticationfirebase.R
 import com.nourtech.wordpress.loginauthenticationfirebase.databinding.FragmentSignUpBinding
-import com.nourtech.wordpress.loginauthenticationfirebase.others.Utilities
+import com.nourtech.wordpress.loginauthenticationfirebase.others.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -52,7 +52,6 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
         }
     }
 
-
     private fun checkField(): Boolean {
         var passed = true
         val username = binding.etUsername.text.toString()
@@ -61,67 +60,67 @@ class SignUpFragment: Fragment(R.layout.fragment_sign_up) {
         val retypePassword = binding.etRetypePassword.text.toString()
 
         binding.tvUsernameErrorMessage.apply {
-            when (Utilities.checkForUsername(username)) {
-                Utilities.NOT_PASSED_EMPTY -> {
+            when (checkForUsername(username)) {
+                NOT_PASSED_EMPTY -> {
                     text = context.getString(R.string.empty_field_error_message)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.NOT_PASSED_TOO_SHORT -> {
+                NOT_PASSED_TOO_SHORT -> {
                     text = context.getString(R.string.short_username_error_message)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.NOT_PASSED_INVALID -> {
+                NOT_PASSED_INVALID -> {
                     text = context.getString(R.string.email_is_invalid)
                     visibility = View.VISIBLE
                     passed = false
                 }
 
-                Utilities.PASSED -> visibility = View.GONE
+                PASSED -> visibility = View.GONE
             }
         }
 
         binding.tvPasswordErrorMessage.apply {
-            when (Utilities.checkPassword(password)) {
-                Utilities.NOT_PASSED_EMPTY -> {
+            when (checkPassword(password)) {
+                NOT_PASSED_EMPTY -> {
                     text = context.getString(R.string.empty_field_error_message)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.NOT_PASSED_TOO_SHORT -> {
+                NOT_PASSED_TOO_SHORT -> {
                     text = context.getString(R.string.short_password_error_massage)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.NOT_PASSED_TOO_LONG -> {
+                NOT_PASSED_TOO_LONG -> {
                     text = context.getString(R.string.too_long_password_error_message)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.NOT_PASSED_INVALID -> {
+                NOT_PASSED_INVALID -> {
                     text = context.getString(R.string.invalid_password_massage)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.PASSED -> visibility = View.GONE
+                PASSED -> visibility = View.GONE
             }
         }
 
         binding.tvRetypePasswordErrorMessage.apply {
-            when (Utilities.checkRetypePassword(password, retypePassword)) {
-                Utilities.NOT_PASSED_EMPTY -> {
+            when (checkRetypePassword(password, retypePassword)) {
+                NOT_PASSED_EMPTY -> {
                     text = context.getString(R.string.empty_field_error_message)
                     visibility = View.VISIBLE
                     passed = false
                 }
-                Utilities.NOT_PASSED_MISMATCH -> {
+                NOT_PASSED_MISMATCH -> {
                     text = context.getString(R.string.retype_password_mismatch_error_massage)
                     visibility = View.VISIBLE
                     passed = false
                 }
 
-                Utilities.PASSED -> visibility = View.GONE
+                PASSED -> visibility = View.GONE
             }
         }
         return passed
